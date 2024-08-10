@@ -1,30 +1,8 @@
-### Weapon Image Changes:
-# dc15 None
-# dc15a 
-# dc17
-# valken38x
-# dc17m
-# z6
-# t21
-# e5
-# e5c
-# rg4d
-# e5s
-# b2laser
-# droidekalaser=
-# e5bx
-# ib94 Center muzzle and fix white
-# make blaster bolts into groups
-
 import math
 from cmu_graphics import *
 import time
 from pygame import mixer
 mixer.init()
-
-# app.height, app.width = 1000, 1000
-
-# time.sleep(3)
 
 app.background = "grey" #rgb(200, 200, 200)
 
@@ -469,9 +447,6 @@ def shoot(x, y):
             muzzle_flash.fill = weapons[app.weaponIndex][5]
             muzzle_flash.value = 0
 
-            print(bullet[0].dx)
-            print(bullet[0].dy)
-
             # Add a slight random offset to the bullet direction
             bullet[0].dx += randrange(-1, 2, 2) * random() / weapons[app.weaponIndex][3]
             bullet[0].dy += randrange(-1, 2, 2) * random() / weapons[app.weaponIndex][3]
@@ -621,37 +596,6 @@ def onMouseDrag(x, y):
     cursor.centerX = x
     cursor.centerY = y
     
-# def checkHit(line):
-#     #### Old code
-#     # if line.hitsShape(enemy):
-#     #     enemy.visible = False
-#     #     enemies.remove(enemy)
-#     #     randomSound(lightsaber_impact_Sounds)
-#     # enemies.sort(key=lambda enemy: enemy.centerX)
-
-#     # active_enemies = []
-
-#     # for enemy in enemies:
-    
-
-#     #     # Remove enemies that are no longer in the active interval
-#     #     active_enemies = [active_enemy for active_enemy in enemies if active_enemy.right > enemy.left]
-
-#     #     # Check for collisions with the target enemy
-#     #     for active_enemy in active_enemies:
-#     #         if enemy == line and active_enemy.hitsShape(enemy):
-#     #             enemy2 = active_enemy
-#     #             if app.lightsaberOn:
-#     #                 enemy2.visible = False
-#     #                 enemies.remove(enemy2)
-#     #                 randomSound(lightsaber_impact_Sounds)
-#     #             else:
-#     #                 enemy2.visible = False
-#     #                 enemies.remove(enemy2)
-#     #                 randomSound(onBlasterHit_Sounds)
-
-
-
 app.stepsPerSecond = 270
 app.steps = 0
 app.z6_startup_steps = 0 
@@ -863,18 +807,18 @@ def onStep():
 
 spawnEnemies()
 
-# for enemy in enemies:
-#     enemy.visible = False
-# character.visible = False
-# dc15a_Image.visible = False
-# lightsaber_blade[0].visible = False
-# lightsaber_blade[1].visible = 
-# lightsaber_hilt.visible = False
-# for bullet in offScreenBullets:
-#     bullet.visible = False
-
-
 if weapons[app.weaponIndex][10] != None: weapons[app.weaponIndex][10].visible = True
 
 cmu_graphics.run() # type: ignore
 
+### Weapon Image Changes:
+# dc15a - fix white
+# dc17 - fix white
+# valken38x - flip
+# dc17m - flip
+# z6 - increase size
+# t21 - increase size, fix white
+# e5 - flip, fix white
+# e5c - increase size
+# e5s - flip
+# ib94 - Center muzzle and fix white
